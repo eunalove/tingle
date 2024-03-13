@@ -1,9 +1,3 @@
-FROM node:latest as builder
-WORKDIR /app
-COPY package.json .
-COPY package-lock.json .
-COPY . .
-RUN npm install
-RUN npm run build
-EXPOSE 3000
-CMD ["npm", "run", "dev"]
+FROM nginx:alpine
+COPY dist/ /usr/share/nginx/html
+CMD ["nginx", "-g", "daemon off;"]
