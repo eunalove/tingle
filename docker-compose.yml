@@ -1,6 +1,6 @@
 version: "3"
 services:
-  cherish-backend:
+  tingle-backend:
     container_name: tingle-backend
     build: ./back/tingle
     image: tingle_back_image:0.0
@@ -12,7 +12,7 @@ services:
       - backend_frontend
 
 
-  cherish-frontend:
+  tingle-frontend:
     container_name: tingle-frontend
     build: ./front/tingle
     image: tingle_front_image:0.0
